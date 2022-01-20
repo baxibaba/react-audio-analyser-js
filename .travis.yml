@@ -1,0 +1,36 @@
+language: node_js
+# nodejs版本
+node_js:
+- '8'
+
+# Travis-CI Caching
+cache:
+  directories:
+  - node_modules
+
+
+# S: Build Lifecycle
+install:
+- npm install
+
+before_script:
+
+# 无其他依赖项所以执行npm run build 构建就行了
+script:
+- npm run build
+
+#after_script:
+#- cd ./dist
+#- git init
+#- git config user.name "baxi"
+#- git config user.email "baxibaba@126.com"
+#- git add .
+#- git commit -m "Update tools"
+#- git push --force --quiet "https://github.com/baxibaba/react-audio-analyser-js.git" master:master
+# E: Build LifeCycle
+
+branches:
+  only:
+  - master
+env:
+  global:
